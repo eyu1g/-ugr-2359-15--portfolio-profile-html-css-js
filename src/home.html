@@ -2,30 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Eyerusalem's iPortfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <header class="header">
-        <h1 class="sitename">
-            <a href="home.html" style="text-decoration: none; color: inherit;">Eyerusalem Geremew</a>
+        <div class="profile-img">
+            <img src="image/mypic.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+        </div>
+        <h1 class="sitename" style="font-family: 'Italianno', cursive;">
+            <a href="home.html" style="text-decoration: none; color:white;">Eyerusalem.G</a>
         </h1>
+        <div class="bx bx-menu" id="menu-icon"></div> <!-- Menu Icon (Hamburger) -->
         <nav class="navmenu">
-            <ul style="list-style-type: none; padding: 0;">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about_me.html">About Me</a></li>  <!-- Updated filename -->
+            <ul class="navbar" style="list-style-type: none; padding: 0;">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="about_me.html">About Me</a></li>
                 <li><a href="hobbies.html">Hobbies</a></li>
                 <li><a href="adventure.html">Adventure</a></li>
-                <li><a href="contact_me.html">Contact Me</a></li>  <!-- Updated filename -->
+                <li><a href="contact_me.html">Contact Me</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="main">
         <section id="hero" class="hero">
-            <img src="image/mypic.jpg" alt="this is my image" width="600" height="500" />
+            <img src="image/mypic.jpg" alt="this is my image" />
+    
             <h2>Eyerusalem.G</h2>
             <p>I'm a <span class="typed" data-typed-items="student of software, at Addis Ababa University">Software Engineering student</span></p>
         </section>
     </main>
+    <script src="https://unpkg.com/typed.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuIcon = document.getElementById('menu-icon');
+            var navbar = document.querySelector('.navbar');
+
+            menuIcon.addEventListener('click', function() {
+                navbar.classList.toggle('active');
+            });
+
+            var typed = new Typed('.typed', {
+                strings: ["student of software.", "Web Developer.", "Innovator."],
+                typeSpeed: 50,
+                backSpeed: 25,
+                backDelay: 2000,
+                loop: true
+            });
+        });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
