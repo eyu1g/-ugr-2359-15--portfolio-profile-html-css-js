@@ -1,0 +1,398 @@
+
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  --background-color: #342020; 
+  --default-color: #000000;
+  --heading-color: #ffffff; 
+  --accent-color: #149ddd; 
+  --surface-color: #ffffff; 
+  --contrast-color: #ffffff; 
+  --nav-color: #a8a9b4;
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #040b14;
+}
+
+body {
+  color: var(--default-color);
+  background-color: var(--background-color); 
+  font-family: var(--default-font);
+  margin: 0; /* Reset margin to zero */
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.header {
+  color: var(--default-color);
+  background-color: var(--background-color); 
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  width: 200px; 
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-img {
+  margin: 0; /* Remove margins */
+  padding: 0; /* Remove padding */
+  margin-top: 40px;
+}
+
+.profile-img img {
+  margin: 0;
+  display: block;
+  width: 60px; /* Change this value to adjust the size */
+  height: 60px; /* Set height to maintain a square aspect ratio */
+  border: 4px solid color-mix(in srgb, var(--default-color), transparent 85%); /* Adjusted border size */
+  border-radius: 50%; /* Rounded image */
+}
+
+.navmenu { 
+  z-index: 9997; 
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.navmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu a {
+  color: var(--nav-color);
+  padding: 15px 10px;
+  font-family: var(--nav-font);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.navmenu a.active,
+.navmenu a:hover,
+.navmenu a.active:hover {
+  color: darkorange !important;
+  font-weight: bold;
+}
+
+.sitename {
+  margin-top: 40px;
+  font-size: 20px;
+  font-family: Italianno;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, .sitename {
+  color: #000000; /* Set color to black */
+}
+
+#menu-icon {
+  padding: 35px; /* Add padding around the menu icon */
+  cursor: pointer; 
+  font-size: 30px; 
+  z-index: 9998; 
+  margin-top: 10px; /* Add margin top for spacing */
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 10px 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: block;
+}
+
+.navbar a:hover {
+  color: darkorange;
+}
+
+/* Menu icon styles */
+.bx-menu {
+  display: none; /* Hide the menu icon by default */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .profile-img img {
+    width: 40px; /* Change for smaller screens */
+    height: 40px; /* Maintain aspect ratio */
+    margin-top: 25px;
+  }
+
+  .header .profile-img img {
+    margin-top: 30px;
+  }
+
+  .sitename {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar {
+    display: none; /* Hide the navbar by default on small screens */
+    position: absolute;
+    top: 80px; /* Adjust based on your header height */
+    left: 0;
+    background-color: black;
+    width: 100%; /* Initial full width */
+    z-index: 1000;
+    transition: width 0.3s ease-in-out; /* Smooth transition for width */
+  }
+
+  .navbar.active {
+    display: flex; /* Show the navbar when active */
+    flex-direction: column; /* Stack links vertically */
+    width: 200px; /* Set a smaller width when active */
+    margin-left: 200px;
+    color: darkorange;
+  }
+
+  .bx-menu {
+    display: block; /* Show the menu icon on small screens */
+  }
+
+  .header {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navmenu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--background-color);
+    width: 100%;
+    z-index: 1000;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .navmenu.active {
+    display: flex; /* Show navmenu when active */
+    flex-direction: column; /* Stack links vertically */
+    width: 100%; /* Full width */
+    background-color: var(--background-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .main {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: var(--background-color);
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero h2, .hero p {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .footer {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 15px;
+    transition: all ease-in-out 0.3s;
+    overflow-y: auto;
+    z-index: 997;
+    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main {
+    margin-left: 150px;
+    margin-top: 60px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+    background-color: var(--surface-color);
+    margin-right: 20px;
+  }
+
+  .hero img {
+    width: 100vw;
+    height: auto;
+    display: block;
+    margin-right: auto;
+  }
+
+  .hero h2, .hero p {
+    top: 55%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin-right: auto;
+    font-size: 2.5em;
+  }
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .profile-info {
+    margin-left: 20px;
+  }
+
+  .footer {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color); 
+  padding: 60px 0;
+  overflow: clip;
+}
+
+.main {
+  margin-left: 250px; 
+  margin-top: 60px;  
+  padding-left: 30px;
+  padding-bottom: 0px; 
+  background-color: var(--surface-color); 
+  margin-right: 20px;
+}
+
+@media (max-width: 1199px) {
+  .main {
+    margin-left: 0; 
+    margin-top: 60px; 
+    padding: 20px;
+    background-color: var(--background-color); 
+  }
+}
+
+.footer a {
+  color: var(--contrast-color);
+}
+
+.footer a:hover {
+  text-decoration: underline; 
+}
+
+/* Typewriter Effect Styles */
+.hero {
+  position: relative;
+  text-align: center; 
+}
+
+.hero p {
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  margin-right: auto;
+  font-size: 2.5em; /* Increase the font size */
+}
+
+.hero h2 {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  margin-right: auto;
+  /* Optional: Add background for better readability */
+  /* background: rgba(0, 0, 0, 0.5); */
+}
+
+/* New styles */
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info {
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
