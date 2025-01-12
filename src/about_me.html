@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Eyerusalem's iPortfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <header class="header">
-        <h1 class="sitename">
-            <a href="home.html">Eyerusalem Geremew</a>
-        </h1>
+        <div class="profile-img">
+            <img src="image/mypic.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+        </div>
+    </div>
+    <h1 class="sitename" style="font-family: 'Italianno', cursive;">
+        <a href="home.html" style="text-decoration: none; color: white;">Eyerusalem.G</a>
+    </h1>
+        <div class="bx bx-menu" id="menu-icon"></div> <!-- Menu Icon (Hamburger) -->
         <nav class="navmenu">
-            <ul style="list-style-type: none; padding: 0;">
+            <ul class="navbar" style="list-style-type: none; padding: 0; width: 200px;">
                 <li><a href="home.html">Home</a></li>
-                <li><a href="about_me.html">About Me</a></li>  <!-- Updated filename -->
+                <li><a href="about_me.html" class="active">About Me</a></li>
                 <li><a href="hobbies.html">Hobbies</a></li>
                 <li><a href="adventure.html">Adventure</a></li>
-                <li><a href="contact_me.html">Contact Me</a></li>  <!-- Updated filename -->
+                <li><a href="contact_me.html">Contact Me</a></li>
             </ul>
         </nav>
     </header>
@@ -23,7 +32,7 @@
     <main class="main">
         <section id="about" class="about">
             <h2>About Me</h2>
-            <p>
+            <p class="para">
                 I’m Eyerusalem Geremew, a student at Addis Ababa University majoring in Software Engineering. My passion for technology drives me to explore the world of programming and problem-solving. I have successfully completed various courses in web development and have earned multiple certificates, showcasing my commitment to expanding my skill set.
 
                 Beyond my studies, I enjoy spending time alone, cleaning my house, and reading, which allows me to express my creativity and stay balanced. I believe that a well-rounded life contributes to being a better problem solver and innovative thinker.
@@ -31,24 +40,45 @@
                 I am enthusiastic about collaborating with others and learning from diverse perspectives as I continue my journey in the tech world.
 
                 Thank you for visiting my profile! I look forward to connecting with like-minded individuals who share my interests.
-            </p>
-            <p>You can also read <a href="https://drive.google.com/file/d/1HznRXQ7Wa5UjLIzeMrPjsBEUIeVOZK-n/view?usp=sharing">MY CV</a> to know about me.</p>
-            <div>
-                <img src="image/mypic.jpg" alt="this is image on about" width="200" height="150" />
-                <h3>Software Student & Web Developer</h3>
+            </p><p>You can also read <a href="https://drive.google.com/file/d/1xpo4FQZkGjHLjphbsWOP-XLll4kjpiev/view?usp=sharing">MY CV</a> to know about me.</p>
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="./image/mypic.jpg" alt="Profile Image">
+                </div>
+                <div class="profile-info">
+                    <h3>Software Student & Web Developer</h3>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>19 Sep 2003</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+251965286650</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Addis Ababa, Ethiopia</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>In Progress</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>eyerusalemg2022@gmail.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <aside>
-            <ul class="about-details">
-                <li>Birthday: 19 Sep 2003</li>
-                <li>Phone: +251965286650</li>
-                <li>City: Addis Ababa, Ethiopia</li>
-                <li>Age: 21</li>
-                <li>Degree: in progress</li>
-                <li>Email: <a href="mailto:eyerusalemg2022@gmail.com">eyerusalemg2022@gmail.com</a></li>
-            </ul>
-        </aside>
     </main>
+
+    <script src="https://unpkg.com/typed.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuIcon = document.getElementById('menu-icon');
+            var navbar = document.querySelector('.navbar');
+
+            menuIcon.addEventListener('click', function() {
+                navbar.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
